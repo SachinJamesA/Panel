@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Contact = () => {
   return (
-    <div className="flex md:flex-row items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 p-4">
-      <div className="md:w-[40%] mb-8 md:mb-0 p-6 bg-white shadow-lg rounded-lg md:mr-12">
+    <div className="md:flex items-center justify-center min-h-screen p-4 bg-gray-100">
+      <div className="md:w-[40%] mb-8 md:mb-0 p-6 bg-white shadow-lg rounded-lg md:mr-12 backdrop-filter backdrop-blur-md bg-white/80">
         <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center max-w-xs mx-auto">Get in Touch</h1>
         <p className="text-gray-700 mb-4">
           We’d love to hear from you! Whether you have questions about our services, need support, or just want to chat, feel free to reach out. Our team is here to help you!
@@ -17,7 +17,7 @@ const Contact = () => {
           <p>Phone: <Link to="tel:+918141372744" className="text-blue-500 hover:underline">+91 8141372744</Link></p>
         </div>
       </div>
-      <form className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md md:w-1/2">
+      <form className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md md:w-1/2 m-auto md:m-0 backdrop-filter backdrop-blur-md bg-white/80">
         <h2 className="text-2xl font-semibold mb-6 text-gray-800 text-center">Contact Us</h2>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
