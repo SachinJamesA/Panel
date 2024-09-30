@@ -76,7 +76,7 @@ const Navbar = ({ activeLink, setActiveLink }) => {
 
             {/* Sign Up and Login Buttons */}
             <div className="btn flex flex-col lg:flex-row justify-center items-center mt-4 lg:mt-0">
-              <li className="navItem list-none">
+              {/* <li className="navItem list-none">
                 <Link
                   to="/signup"
                   className={`navLink text-lg lg:text-xl font-medium hover:cursor-pointer flex items-center justify-center text-white lg:text-black hover:text-white py-1 px-6 rounded-full hover:bg-[#4668DF] whitespace-nowrap transition-all duration-200 ${
@@ -87,7 +87,7 @@ const Navbar = ({ activeLink, setActiveLink }) => {
                   <GoPerson className="mr-2" />
                   Sign Up
                 </Link>
-              </li>
+              </li> */}
               <li className="navItem list-none">
                 <Link
                   to="/login"
