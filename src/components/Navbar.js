@@ -24,11 +24,7 @@ const Navbar = ({ activeLink, setActiveLink }) => {
         {/* Logo */}
         <div className="logodiv lg:static lg:mr-4 lg:w-auto w-32">
           <Link to="/">
-            <img
-              src={logo}
-              alt="Logo"
-              className="h-20 w-auto object-contain"
-            />
+            <img src={logo} alt="Logo" className="h-20 w-auto object-contain" />
           </Link>
         </div>
 
@@ -41,32 +37,34 @@ const Navbar = ({ activeLink, setActiveLink }) => {
             <li className="navItem list-none mt-2 lg:mt-0 lg:mr-4">
               <Link
                 to="/"
-                className={`navLink text-lg lg:text-xl font-medium text-white lg:text-black hover:text-[#4668DF] focus:ring focus:ring-offset-2 focus:ring-[#4668DF] py-2 px-4 leading-snug transition-all duration-200 ${
-                  activeLink === "Home" ? "text-[#775BE5]" : ""
+                className={`navLink text-lg lg:text-xl font-medium text-white lg:text-black hover:text-[#4668DF] py-2 px-4 leading-snug transition-all duration-200 ${
+                  activeLink === "Home" ? "border-b-2 border-b-[#4668DF] pb-2" : "border-b-0"
                 }`}
                 onClick={() => setActiveLink("Home")}
               >
                 Home
               </Link>
             </li>
+
             {/* About Link */}
             <li className="navItem list-none mt-2 lg:mt-0 lg:mr-4">
               <Link
                 to="/about"
-                className={`navLink text-lg lg:text-xl font-medium text-white lg:text-black hover:text-[#4668DF] focus:ring focus:ring-offset-2 focus:ring-[#4668DF] py-2 px-4 leading-snug transition-all duration-200 ${
-                  activeLink === "About" ? "text-[#775BE5]" : ""
+                className={`navLink text-lg lg:text-xl font-medium text-white lg:text-black hover:text-[#4668DF] py-2 px-4 leading-snug transition-all duration-200 ${
+                  activeLink === "About" ? "border-b-2 border-[#4668DF] pb-2" : "border-b-0"
                 }`}
                 onClick={() => setActiveLink("About")}
               >
                 About
               </Link>
             </li>
+
             {/* Contact Link */}
             <li className="navItem list-none mt-2 lg:mt-0 lg:mr-4">
               <Link
                 to="/contact"
-                className={`navLink text-lg lg:text-xl font-medium text-white lg:text-black hover:text-[#4668DF] focus:ring focus:ring-offset-2 focus:ring-[#4668DF] py-2 px-4 leading-snug transition-all duration-200 ${
-                  activeLink === "Contact" ? "text-[#775BE5]" : ""
+                className={`navLink text-lg lg:text-xl font-medium text-white lg:text-black hover:text-[#4668DF] py-2 px-4 leading-snug transition-all duration-200 ${
+                  activeLink === "Contact" ? "border-b-2 border-[#4668DF] pb-2" : "border-b-0"
                 }`}
                 onClick={() => setActiveLink("Contact")}
               >
@@ -76,18 +74,6 @@ const Navbar = ({ activeLink, setActiveLink }) => {
 
             {/* Sign Up and Login Buttons */}
             <div className="btn flex flex-col lg:flex-row justify-center items-center mt-4 lg:mt-0">
-              {/* <li className="navItem list-none">
-                <Link
-                  to="/signup"
-                  className={`navLink text-lg lg:text-xl font-medium hover:cursor-pointer flex items-center justify-center text-white lg:text-black hover:text-white py-1 px-6 rounded-full hover:bg-[#4668DF] whitespace-nowrap transition-all duration-200 ${
-                    activeLink === "Sign Up" ? "bg-[#4668DF] text-white" : ""
-                  }`}
-                  onClick={() => setActiveLink("Sign Up")}
-                >
-                  <GoPerson className="mr-2" />
-                  Sign Up
-                </Link>
-              </li> */}
               <li className="navItem list-none">
                 <Link
                   to="/login"
@@ -109,19 +95,18 @@ const Navbar = ({ activeLink, setActiveLink }) => {
             >
               <IoCloseCircle />
             </div>
-
           </div>
         </div>
 
         {/* Hamburger Menu */}
         <div className="hamburger text-3xl lg:hidden">
           <button
-            className="bars transition-transform duration-300 hover:rotate-90 text-black" onClick={showBar}
+            className="bars transition-transform duration-300 hover:rotate-90 text-black"
+            onClick={showBar}
           >
             <FaBars />
           </button>
         </div>
-        
       </div>
     </div>
   );
