@@ -9,13 +9,7 @@ const app = express();
 const port = process.env.PORT || 5002;
 
 // Middleware
-app.use(cors(
-  {
-    origin: ["https://prosmmindia-cyan.vercel.app/"],
-    methods: ["POST", "GET"],
-    credientials: true
-  }
-));
+app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
