@@ -56,7 +56,7 @@ const Navbar = ({ activeLink, setActiveLink }) => {
             {/* About Link */}
             <li className="navItem list-none mt-2 lg:mt-0 lg:mr-4">
               <Link
-                to="/about"
+                to="/service"
                 className={`navLink text-lg lg:text-xl font-medium text-white lg:text-black hover:text-[#4668DF] py-2 px-4 leading-snug transition-all duration-200 ${
                   activeLink === "Service" ? "border-b-2 border-[#4668DF] pb-2" : "border-b-0"
                 }`}
@@ -95,7 +95,7 @@ const Navbar = ({ activeLink, setActiveLink }) => {
               <Link
                 to="/Api"
                 className={`navLink text-lg lg:text-xl font-medium text-white lg:text-black hover:text-[#4668DF] py-2 px-4 leading-snug transition-all duration-200 ${
-                  activeLink === "Contact" ? "border-b-2 border-[#4668DF] pb-2" : "border-b-0"
+                  activeLink === "Api" ? "border-b-2 border-[#4668DF] pb-2" : "border-b-0"
                 }`}
                 onClick={() => setActiveLink("Api")}
               >
