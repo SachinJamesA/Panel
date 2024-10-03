@@ -22,9 +22,9 @@ const Navbar = ({ activeLink, setActiveLink }) => {
     <div className="navbar-section sticky top-0 lg:bg-white/20 z-[1000] lg:backdrop-blur-lg lg:shadow-lg transition-all duration-300">
       <div className="header flex items-center justify-between py-2 lg:py-0">
         {/* Logo */}
-        <div className="logodiv lg:static lg:mr-4 lg:w-auto w-32">
+        <div className="logodiv lg:static lg:mr-4 lg:w-auto w-40">
           <Link to="/">
-            <img src={logo} alt="Logo" className="h-20 w-auto object-contain" />
+           <img src={logo} alt="Logo" className="h-24 w-auto object-contain" />
           </Link>
         </div>
 
@@ -51,6 +51,18 @@ const Navbar = ({ activeLink, setActiveLink }) => {
               <Link
                 to="/about"
                 className={`navLink text-lg lg:text-xl font-medium text-white lg:text-black hover:text-[#4668DF] py-2 px-4 leading-snug transition-all duration-200 ${
+                  activeLink === "Service" ? "border-b-2 border-[#4668DF] pb-2" : "border-b-0"
+                }`}
+                onClick={() => setActiveLink("Service")}
+              >
+                Service
+              </Link>
+            </li>
+
+            <li className="navItem list-none mt-2 lg:mt-0 lg:mr-4">
+              <Link
+                to="/about"
+                className={`navLink text-lg lg:text-xl font-medium text-white lg:text-black hover:text-[#4668DF] py-2 px-4 leading-snug transition-all duration-200 ${
                   activeLink === "About" ? "border-b-2 border-[#4668DF] pb-2" : "border-b-0"
                 }`}
                 onClick={() => setActiveLink("About")}
@@ -71,6 +83,19 @@ const Navbar = ({ activeLink, setActiveLink }) => {
                 Contact
               </Link>
             </li>
+
+            <li className="navItem list-none mt-2 lg:mt-0 lg:mr-4">
+              <Link
+                to="/Api"
+                className={`navLink text-lg lg:text-xl font-medium text-white lg:text-black hover:text-[#4668DF] py-2 px-4 leading-snug transition-all duration-200 ${
+                  activeLink === "Contact" ? "border-b-2 border-[#4668DF] pb-2" : "border-b-0"
+                }`}
+                onClick={() => setActiveLink("Api")}
+              >
+                Api
+              </Link>
+            </li>
+
 
             {/* Sign Up and Login Buttons */}
             <div className="btn flex flex-col lg:flex-row justify-center items-center mt-4 lg:mt-0">
