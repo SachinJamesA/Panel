@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -13,6 +13,8 @@ const Signup = ({ setActiveLink }) => {
   // State for password visibility toggles
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const navigate = useNavigate(); // To navigate after successful signup
 
   const handleNextStep = () => {
     if (step === 1 && name) {
@@ -30,14 +32,36 @@ const Signup = ({ setActiveLink }) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (password !== confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
-    // Handle signup logic here (e.g., API call)
-    console.log("Name:", name, "Email:", email, "Password:", password);
+
+    try {
+      const response = await fetch('http://localhost:5002/api/auth/createuser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Store the token in localStorage or context
+        localStorage.setItem('token', data.authtoken);
+        navigate('/'); // Redirect user to / after successful signup
+      } else {
+        alert('User already exists or other error');
+      }
+    } catch (error) {
+      console.error('Error signing up:', error);
+      alert('Server error. Please try again later.');
+    }
   };
 
   return (
@@ -145,18 +169,15 @@ const Signup = ({ setActiveLink }) => {
           )}
 
           {/* Step 4: Confirm Password */}
-          {step >= 4 && (
-            <div className="mb-6 relative">
-              <label
-                className="block text-sm font-medium mb-2"
-                htmlFor="confirmPassword"
-              >
+          {step === 4 && (
+            <div className="mb-4 relative">
+              <label className="block text-sm font-medium mb-2" htmlFor="confirmPassword">
                 Confirm Password
               </label>
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 id="confirmPassword"
-                placeholder="Confirm Password"
+                placeholder="Confirm Your Password"
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
@@ -176,18 +197,14 @@ const Signup = ({ setActiveLink }) => {
               </button>
             </div>
           )}
-        </form>
 
-        <p className="text-center text-sm mt-4">
-          Already have an account?{" "}
-          <Link
-            to="/login"
-            className="text-blue-500 hover:underline"
-            onClick={() => setActiveLink("Login")} // Update active link
-          >
-            Log In
-          </Link>
-        </p>
+          <p className="text-center text-sm mt-4">
+            Already have an account?{" "}
+            <Link to="/login" className="text-blue-500 hover:underline" onClick={() => setActiveLink("Log In")}>
+              Log In
+            </Link>
+          </p>
+        </form>
       </div>
     </div>
   );

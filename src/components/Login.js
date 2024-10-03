@@ -1,14 +1,36 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = ({ setActiveLink }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // To navigate after successful login
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log("Email:", email, "Password:", password);
+
+    try {
+      const response = await fetch('http://localhost:5002/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Store the token in localStorage or context
+        localStorage.setItem('token', data.authtoken);
+        navigate('/'); // Redirect user to / after successful login
+      } else {
+        alert('Invalid credentials'); // Handle invalid credentials
+      }
+    } catch (error) {
+      console.error('Error logging in:', error);
+      alert('Server error. Please try again later.');
+    }
   };
 
   return (
@@ -43,13 +65,6 @@ const Login = ({ setActiveLink }) => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-          </div>
-          <div className="mb-6 flex justify-between items-center">
-            <div>
-              <input type="checkbox" id="remember" className="mr-2 leading-tight" />
-              <label htmlFor="remember" className="text-gray-700 text-sm">Remember Me</label>
-            </div>
-            <Link to="/forgot-password" className="text-blue-500 text-sm hover:underline">Forgot Password?</Link>
           </div>
           <button
             type="submit"
