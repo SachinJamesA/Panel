@@ -4,6 +4,7 @@ import { IoCloseCircle } from "react-icons/io5";
 import { GoPerson } from "react-icons/go";
 import { Link } from "react-router-dom";
 import logo from "../assets/Logo.png"; // Corrected import path
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ activeLink, setActiveLink }) => {
   const [active, setActive] = useState("navbar");
@@ -16,6 +17,12 @@ const Navbar = ({ activeLink, setActiveLink }) => {
   const closeBar = (event) => {
     event.preventDefault();
     setActive("navbar");
+  };
+
+  let navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
   };
 
   return (
@@ -74,6 +81,7 @@ const Navbar = ({ activeLink, setActiveLink }) => {
 
             {/* Sign Up and Login Buttons */}
             <div className="btn flex flex-col lg:flex-row justify-center items-center mt-4 lg:mt-0">
+            {!localStorage.getItem("token") ? (
               <li className="navItem list-none">
                 <Link
                   to="/login"
@@ -86,6 +94,14 @@ const Navbar = ({ activeLink, setActiveLink }) => {
                   Login
                 </Link>
               </li>
+            ) : (
+              <button
+                onClick={handleLogout}
+                className="rounded-lg lg:border-2 lg:border-solid lg:border-[hsl(214.3 31.8% 91.4%)] px-2 py-1 bg-[#367cf4] text-md font-medium text-white dark:border-none"
+              >
+                Logout
+              </button>
+            )}
             </div>
 
             {/* Close Button for Mobile */}

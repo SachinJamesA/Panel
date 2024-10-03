@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Home from './components/Home'; // Import Home component
+import About from './components/About';
 
 function App() {
   const [activeLink, setActiveLink] = useState("");
@@ -14,7 +15,8 @@ function App() {
     <Router>
       <Navbar activeLink={activeLink} setActiveLink={setActiveLink} />
       <Routes>
-        <Route path="/" element={<Home />} /> {/* Add Home route */}
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login setActiveLink={setActiveLink} />} />
         <Route path="/signup" element={<Signup setActiveLink={setActiveLink} />} />
