@@ -8,6 +8,8 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Home from './components/Home'; // Import Home component
 import About from './components/About';
+import ProfilePage from './profile/ProfilePage';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   const [activeLink, setActiveLink] = useState("");
@@ -20,6 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login setActiveLink={setActiveLink} />} />
         <Route path="/signup" element={<Signup setActiveLink={setActiveLink} />} />
+        <Route path="/profile" element={<ProfilePage />} /> {/* Profile Page */}
       </Routes>
       <Footer />
     </Router>

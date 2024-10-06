@@ -5,6 +5,8 @@ import { GoPerson } from "react-icons/go";
 import { Link } from "react-router-dom";
 import logo from "../assets/Logo.png"; // Corrected import path
 import { useNavigate } from "react-router-dom";
+// import ProfileSection from "../profile/ProfileSection";
+import Profile from "../profile/Profile";
 
 const Navbar = ({ activeLink, setActiveLink }) => {
   const [active, setActive] = useState("navbar");
@@ -120,12 +122,15 @@ const Navbar = ({ activeLink, setActiveLink }) => {
                 </Link>
               </li>
             ) : (
-              <button
-                onClick={handleLogout}
-                className="rounded-lg lg:border-2 lg:border-solid lg:border-[hsl(214.3 31.8% 91.4%)] px-2 py-1 bg-[#367cf4] text-md font-medium text-white dark:border-none"
-              >
-                Logout
-              </button>
+              <>
+                <Profile /> {/* Render ProfileSection after login */}
+                <button
+                  onClick={handleLogout}
+                  className="rounded-lg lg:border-2 lg:border-solid lg:border-[hsl(214.3 31.8% 91.4%)] px-2 py-1 bg-[#367cf4] text-md font-medium text-white dark:border-none ml-4"
+                >
+                  Logout
+                </button>
+              </>
             )}
             </div>
 
