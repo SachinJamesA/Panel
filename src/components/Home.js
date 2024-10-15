@@ -83,39 +83,38 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="bg-blue-50 py-16 lg:py-24 px-6 md:px-12 lg:px-20">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">What Our Clients Say</h2>
-          <p className="text-lg md:text-xl font-light mb-12">
-            Hear from some of our satisfied clients who have transformed their brands with us.
-          </p>
+      <section className="bg-gray-900 text-white py-16">
+      <div className="container mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-4">HOW IT WORK?</h2>
+        <p className="text-gray-400 mb-12">A FEW STEPS TO PROMOTE YOUR BUSINESS OR PERSONAL PAGE</p>
 
-          <div className="flex flex-wrap justify-center gap-12">
-            <div className="bg-white shadow-lg rounded-lg p-6 w-80">
-              <p className="text-gray-600 italic mb-4">
-                "The team at this agency helped us grow our online presence significantly!"
-              </p>
-              <h3 className="font-bold">John Doe</h3>
-              <p className="text-gray-500">CEO, Company A</p>
-            </div>
-            <div className="bg-white shadow-lg rounded-lg p-6 w-80">
-              <p className="text-gray-600 italic mb-4">
-                "Their content strategy has been a game changer for our engagement."
-              </p>
-              <h3 className="font-bold">Jane Smith</h3>
-              <p className="text-gray-500">Marketing Director, Company B</p>
-            </div>
-            <div className="bg-white shadow-lg rounded-lg p-6 w-80">
-              <p className="text-gray-600 italic mb-4">
-                "We saw an immediate increase in followers and brand awareness."
-              </p>
-              <h3 className="font-bold">Alice Johnson</h3>
-              <p className="text-gray-500">Owner, Company C</p>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Step 1 */}
+          <div className="bg-gray-800 p-6 rounded-lg">
+            <div className="text-4xl font-bold mb-2">Step</div>
+            <div className="text-6xl text-gray-600">1</div>
+            <h3 className="text-xl font-bold mt-4">REGISTER AN ACCOUNT</h3>
+            <p className="text-gray-400 mt-2">Go to the registration page and fill in all the fields and register.</p>
+          </div>
+
+          {/* Step 2 */}
+          <div className="bg-gray-800 p-6 rounded-lg">
+            <div className="text-4xl font-bold mb-2">Step</div>
+            <div className="text-6xl text-gray-600">2</div>
+            <h3 className="text-xl font-bold mt-4">ORDER A SERVICE</h3>
+            <p className="text-gray-400 mt-2">Choose any of the services that you like and place your order.</p>
+          </div>
+
+          {/* Step 3 */}
+          <div className="bg-gray-800 p-6 rounded-lg">
+            <div className="text-4xl font-bold mb-2">Step</div>
+            <div className="text-6xl text-gray-600">3</div>
+            <h3 className="text-xl font-bold mt-4">GET YOUR POPULARITY</h3>
+            <p className="text-gray-400 mt-2">Monitor how your services are performed efficiently and quickly.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Call to Action Section */}
       <section className="py-16 lg:py-24 bg-blue-900 text-white text-center">
