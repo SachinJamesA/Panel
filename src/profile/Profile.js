@@ -117,20 +117,25 @@ const Profile = ({ onProfileClick }) => {
             onError={(e) => {
               e.target.src = "https://via.placeholder.com/50"; // Fallback placeholder image
             }}
+            onClick={toggleDropdown}
           />
-        </div>
-        <div className="flex items-center text-gray-700 hover:text-[#4668DF]" onClick={toggleDropdown}>
-          <span>{username || "Profile"}</span>
-          <i className={`fa ${isDropdownOpen ? "fa-chevron-up" : "fa-chevron-down"} ml-2 text-sm transition-all duration-300`}></i>
         </div>
       </div>
 
       {/* Dropdown menu */}
       {isDropdownOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-50">
-          <ul className="py-2 space-y-2">
+        <div
+          className="absolute right-0 mt-2 w-56 bg-white text-black border border-gray-200 rounded-2xl shadow-lg transform transition-all duration-300 ease-in-out opacity-100 z-50"
+          style={{ animation: isDropdownOpen ? "slideDown 0.3s ease-in-out" : "slideUp 0.3s ease-in-out" }}
+        >
+          <ul className="py-4 space-y-4 text-lg">
+            {/* Username */}
+            <li className="flex items-center px-4 py-2 font-semibold">
+              <span>{username}</span>
+            </li>
+
             {/* Upload Photo */}
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer space-x-2 text-lg">
+            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer space-x-2 text-lg transition-colors duration-200">
               <AiOutlineCamera className="text-blue-500" />
               <label className="cursor-pointer flex-1">
                 <span>Upload Photo</span>
@@ -141,37 +146,37 @@ const Profile = ({ onProfileClick }) => {
                   onChange={handleFileChange}
                 />
               </label>
-              <button onClick={handleUploadClick} className="text-blue-500">Upload</button>
+              <button onClick={handleUploadClick} className="text-blue-500 font-medium">Upload</button>
             </li>
 
             {/* Wishlist */}
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer space-x-2 text-lg" onClick={onProfileClick}>
+            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer space-x-2 text-lg transition-colors duration-200" onClick={onProfileClick}>
               <AiOutlineHeart className="text-red-500" />
               <span>Wishlist</span>
             </li>
 
             {/* Cart */}
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer space-x-2 text-lg" onClick={onProfileClick}>
+            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer space-x-2 text-lg transition-colors duration-200" onClick={onProfileClick}>
               <AiOutlineShoppingCart className="text-green-500" />
               <span>Cart</span>
             </li>
 
             {/* Fund */}
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer space-x-2 text-lg" onClick={onProfileClick}>
+            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer space-x-2 text-lg transition-colors duration-200" onClick={onProfileClick}>
               <AiOutlineFund className="text-blue-500" />
               <span>Fund</span>
             </li>
 
             {/* Currency */}
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer space-x-2 text-lg" onClick={onProfileClick}>
+            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer space-x-2 text-lg transition-colors duration-200" onClick={onProfileClick}>
               <FaMoneyBillWave className="text-yellow-500" />
               <span>Currency</span>
             </li>
 
             {/* Logout Button */}
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer space-x-2 text-lg">
-              <AiOutlineLogout className="text-red-600" />
-              <button onClick={handleLogout} className="w-full text-left text-red-600 font-medium">Logout</button>
+            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer space-x-2 text-lg transition-colors duration-200">
+              <AiOutlineLogout className="text-red-500" />
+              <button onClick={handleLogout} className="w-full text-left font-medium text-red-600">Logout</button>
             </li>
           </ul>
         </div>
