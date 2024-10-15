@@ -1,185 +1,258 @@
 import React from "react";
+import { FaTiktok, FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa';
+
+// import serviceImage1 from "../assets/service1.jpg"; // Add your actual image path
+// import serviceImage2 from "../assets/service2.jpg";
+// import serviceImage3 from "../assets/service3.jpg";
+// import serviceImage4 from "../assets/serviceImage4.jpg"; // Paid Advertising
+// import serviceImage5 from "../assets/serviceImage5.jpg"; // Influencer Marketing
+// import serviceImage6 from "../assets/serviceImage6.jpg"; // Community Management
 
 const services = [
-  {
-    id: 1,
-    title: 'Tiktok',
-    description: `Buy 100% Tiktok REAL Followers Worldwide,
-                  Buy 100% Tiktok REAL Female Followers,
-                  Buy 100% Tiktok REAL Profile Followers,
-                  Buy 100% Tiktok REAL Photo Likes and Views`,
-    bgColor: 'bg-gray-800',
-    textColor: 'text-white',
-    buttonColor: 'bg-purple-600 text-white',
-    icon: '🔵',
-  },
-  {
-    id: 2,
-    title: 'Instagram',
-    description: `Buy 100% Instagram REAL Followers Worldwide,
-                  Buy 100% Instagram REAL INDIAN Followers,
-                  Buy 100% Instagram REAL TARGETED Followers,
-                  Buy 100% Instagram REAL Photo Likes and Views`,
-    bgColor: 'bg-gray-800',
-    textColor: 'text-white',
-    buttonColor: 'bg-purple-600 text-white',
-    icon: '🟣',
-  },
-  {
-    id: 3,
-    title: 'Facebook',
-    description: `Buy 100% Facebook REAL Page Likes Indian,
-                  Buy 100% Facebook REAL Post Likes,
-                  Buy 100% Facebook REAL Followers Targeted,
-                  Buy 100% Facebook REAL Profile Followers`,
-    bgColor: 'bg-gray-800',
-    textColor: 'text-white',
-    buttonColor: 'bg-purple-600 text-white',
-    icon: '🔵',
-  },
-  {
-    id: 4,
-    title: 'Youtube',
-    description: `Buy 100% Youtube REAL SUBSCRIBERS Worldwide,
-                  Buy 100% Youtube REAL INDIAN SUBSCRIBERS,
-                  Buy 100% Youtube REAL VIEWS,
-                  Buy 100% Youtube REAL COUNTRY TARGETED VIEWS`,
-    bgColor: 'bg-gray-800',
-    textColor: 'text-white',
-    buttonColor: 'bg-purple-600 text-white',
-    icon: '🔴',
-  },
-];
+    {
+      id: 1,
+      title: 'Tiktok',
+      description: `Buy 100% Tiktok REAL Followers Worldwide,
+                    Buy 100% Tiktok REAL Female Followers,
+                    Buy 100% Tiktok REAL Profile Followers,
+                    Buy 100% Tiktok REAL Photo Likes and Views`,
+      bgColor: 'bg-gray-700',
+      textColor: 'text-white',
+      buttonColor: 'bg-white text-gray-800',
+      icon: <FaTiktok className="text-white" size={40} />,
+    },
+    {
+      id: 2,
+      title: 'Instagram',
+      description: `Buy 100% Instagram REAL Followers Worldwide,
+                    Buy 100% Instagram REAL INDIAN Followers,
+                    Buy 100% Instagram REAL TARGETED Followers,
+                    Buy 100% Instagram REAL Photo Likes and Views`,
+      bgColor: 'bg-purple-600',
+      textColor: 'text-white',
+      buttonColor: 'bg-white text-purple-800',
+      icon: <FaInstagram className="text-white" size={40} />,
+    },
+    {
+      id: 3,
+      title: 'Facebook',
+      description: `Buy 100% Facebook REAL Page Likes Indian,
+                    Buy 100% Facebook REAL Post Likes,
+                    Buy 100% Facebook REAL Followers Targeted,
+                    Buy 100% Facebook REAL Profile Followers`,
+      bgColor: 'bg-blue-500',
+      textColor: 'text-white',
+      buttonColor: 'bg-white text-blue-800',
+      icon: <FaFacebookF className="text-white" size={40} />,
+    },
+    {
+      id: 4,
+      title: 'Youtube',
+      description: `Buy 100% Youtube REAL SUBSCRIBERS Worldwide,
+                    Buy 100% Youtube REAL INDIAN SUBSCRIBERS,
+                    Buy 100% Youtube REAL VIEWS,
+                    Buy 100% Youtube REAL COUNTRY TARGETED VIEWS`,
+      bgColor: 'bg-red-600',
+      textColor: 'text-white',
+      buttonColor: 'bg-white text-red-800',
+      icon: <FaYoutube className="text-white" size={40} />,
+    },
+  ];
+  
+
 
 const Home = () => {
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="bg-gray-100">
       {/* Hero Section */}
-      <section className="bg-blue-800 text-white min-h-screen flex items-center justify-center">
+      <section className="bg-blue-900 text-white min-h-screen flex items-center justify-center">
         <div className="text-center px-6">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
             Elevate Your Brand with Expert Social Media Marketing
           </h1>
           <p className="text-lg md:text-xl mb-8">
-            Unlock the full potential of your business through effective social media strategies tailored to your needs.
+            Unlock the full potential of your business through effective
+            social media strategies tailored to your needs.
           </p>
           <a
             href="#services"
-            className="inline-block bg-purple-600 text-white font-semibold py-3 px-6 rounded hover:bg-purple-700 transition duration-200"
+            className="inline-block bg-white text-blue-900 font-semibold py-3 px-6 rounded hover:bg-gray-200 transition duration-200"
           >
             Learn More
           </a>
         </div>
       </section>
 
-      {/* Top Selling Services Section */}
-      <section className="bg-gray-900 text-white py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-center text-3xl font-bold mb-8">Our Top Selling Services</h2>
-          <p className="text-center mb-12 text-lg max-w-xl mx-auto">
-            SmmSocialMedia is the #1 Best SMM Panel for Instagram, Facebook, and other social media platforms. You can provide quality and cheap SMM services to your customers.
+      {/* Services Section */}
+      {/* <section id="services" className="py-16 lg:py-24 px-6 md:px-12 lg:px-20">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Services</h2>
+          <p className="text-lg md:text-xl font-light mb-12">
+            We offer a wide range of services to help your brand grow.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map(service => (
-              <div key={service.id} className={`${service.bgColor} p-6 rounded-lg`}>
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className={`text-xl font-bold ${service.textColor}`}>{service.title}</h3>
-                  <span className="text-4xl">{service.icon}</span>
-                </div>
-                <p className={`mb-6 ${service.textColor}`} style={{ maxHeight: '100px', overflowY: 'auto' }}>
-                  {service.description}
-                </p>
-                <button className={`w-full py-2 rounded-full ${service.buttonColor} font-bold`}>
-                  Get Started
-                </button>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div className="bg-white shadow-lg rounded-lg p-6">
+              <img src={serviceImage1} alt="Social Media Management" className="w-full h-48 object-cover rounded-t-lg" />
+              <h3 className="text-2xl font-bold text-blue-900 mb-2">Social Media Management</h3>
+              <p className="text-gray-600">
+                We handle your social media profiles, ensuring consistent branding and engagement with your audience.
+              </p>
+            </div>
+            <div className="bg-white shadow-lg rounded-lg p-6">
+              <img src={serviceImage2} alt="Content Creation" className="w-full h-48 object-cover rounded-t-lg" />
+              <h3 className="text-2xl font-bold text-blue-900 mb-2">Content Creation</h3>
+              <p className="text-gray-600">
+                Our creative team crafts compelling content tailored to resonate with your target audience.
+              </p>
+            </div>
+            <div className="bg-white shadow-lg rounded-lg p-6">
+              <img src={serviceImage3} alt="Analytics & Reporting" className="w-full h-48 object-cover rounded-t-lg" />
+              <h3 className="text-2xl font-bold text-blue-900 mb-2">Analytics & Reporting</h3>
+              <p className="text-gray-600">
+                We provide detailed analytics to track your social media performance and refine strategies.
+              </p>
+            </div>
+            <div className="bg-white shadow-lg rounded-lg p-6">
+              <img src={serviceImage4} alt="Paid Advertising" className="w-full h-48 object-cover rounded-t-lg" />
+              <h3 className="text-2xl font-bold text-blue-900 mb-2">Paid Advertising</h3>
+              <p className="text-gray-600">
+                We create targeted ad campaigns on platforms like Facebook and Instagram to boost your reach.
+              </p>
+            </div>
+            <div className="bg-white shadow-lg rounded-lg p-6">
+              <img src={serviceImage5} alt="Influencer Marketing" className="w-full h-48 object-cover rounded-t-lg" />
+              <h3 className="text-2xl font-bold text-blue-900 mb-2">Influencer Marketing</h3>
+              <p className="text-gray-600">
+                Collaborate with influencers to enhance your brand visibility and credibility.
+              </p>
+            </div>
+            <div className="bg-white shadow-lg rounded-lg p-6">
+              <img src={serviceImage6} alt="Community Management" className="w-full h-48 object-cover rounded-t-lg" />
+              <h3 className="text-2xl font-bold text-blue-900 mb-2">Community Management</h3>
+              <p className="text-gray-600">
+                Engage and nurture your online community, turning followers into loyal customers.
+              </p>
+            </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+       {/* Top Selling Services Section */}
+       <section className="bg-gray-900 text-white py-16">
+  <div className="container mx-auto px-4">
+    <h2 className="text-center text-3xl font-bold mb-8">Our Top Selling Services</h2>
+    <p className="text-center mb-12 text-lg max-w-xl mx-auto">
+      SmmSocialMedia is the #1 Best SMM Panel for Instagram, Facebook, and other social media platforms. You can provide quality and cheap SMM services to your customers.
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {services.map(service => (
+        <div key={service.id} className={`${service.bgColor} p-6 rounded-lg`}>
+          <div className="flex justify-between items-center mb-4">
+            <h3 className={`text-xl font-bold ${service.textColor}`}>{service.title}</h3>
+            <span>{service.icon}</span>
+          </div>
+          <p className={`mb-6 ${service.textColor}`} style={{ maxHeight: '100px', overflowY: 'auto' }}>
+            {service.description}
+          </p>
+          <button className={`w-full py-2 rounded-full ${service.buttonColor} font-bold`}>
+            Get Started
+          </button>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
 
       {/* How it works */}
-      <section className="bg-gray-800 text-white py-16">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">HOW IT WORKS</h2>
-          <p className="text-gray-400 mb-12">A FEW STEPS TO PROMOTE YOUR BUSINESS OR PERSONAL PAGE</p>
+      <section className="bg-gray-900 text-white py-16">
+      <div className="container mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-4">HOW IT WORK?</h2>
+        <p className="text-gray-400 mb-12">A FEW STEPS TO PROMOTE YOUR BUSINESS OR PERSONAL PAGE</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Step 1 */}
-            <div className="bg-gray-700 p-6 rounded-lg">
-              <div className="text-4xl font-bold mb-2">Step</div>
-              <div className="text-6xl text-gray-500">1</div>
-              <h3 className="text-xl font-bold mt-4">REGISTER AN ACCOUNT</h3>
-              <p className="text-gray-400 mt-2">Go to the registration page and fill in all the fields and register.</p>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Step 1 */}
+          <div className="bg-gray-800 p-6 rounded-lg">
+            <div className="text-4xl font-bold mb-2">Step</div>
+            <div className="text-6xl text-gray-600">1</div>
+            <h3 className="text-xl font-bold mt-4">REGISTER AN ACCOUNT</h3>
+            <p className="text-gray-400 mt-2">Go to the registration page and fill in all the fields and register.</p>
+          </div>
 
-            {/* Step 2 */}
-            <div className="bg-gray-700 p-6 rounded-lg">
-              <div className="text-4xl font-bold mb-2">Step</div>
-              <div className="text-6xl text-gray-500">2</div>
-              <h3 className="text-xl font-bold mt-4">ORDER A SERVICE</h3>
-              <p className="text-gray-400 mt-2">Choose any of the services that you like and place your order.</p>
-            </div>
+          {/* Step 2 */}
+          <div className="bg-gray-800 p-6 rounded-lg">
+            <div className="text-4xl font-bold mb-2">Step</div>
+            <div className="text-6xl text-gray-600">2</div>
+            <h3 className="text-xl font-bold mt-4">ORDER A SERVICE</h3>
+            <p className="text-gray-400 mt-2">Choose any of the services that you like and place your order.</p>
+          </div>
 
-            {/* Step 3 */}
-            <div className="bg-gray-700 p-6 rounded-lg">
-              <div className="text-4xl font-bold mb-2">Step</div>
-              <div className="text-6xl text-gray-500">3</div>
-              <h3 className="text-xl font-bold mt-4">GET YOUR POPULARITY</h3>
-              <p className="text-gray-400 mt-2">Monitor how your services are performed efficiently and quickly.</p>
-            </div>
+          {/* Step 3 */}
+          <div className="bg-gray-800 p-6 rounded-lg">
+            <div className="text-4xl font-bold mb-2">Step</div>
+            <div className="text-6xl text-gray-600">3</div>
+            <h3 className="text-xl font-bold mt-4">GET YOUR POPULARITY</h3>
+            <p className="text-gray-400 mt-2">Monitor how your services are performed efficiently and quickly.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Call to Action Section */}
-      <section className="bg-gray-800 text-white py-16">
-        <div className="container mx-auto px-4 md:flex items-center">
-          {/* Left Side: Image or Illustration */}
-          <div className="md:w-1/2 text-center md:text-left">
-            <div className="bg-purple-700 p-8 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4">WE PREFER QUALITY</h2>
-              <p className="text-gray-400">
-                We care about our users, so we give the best and are ready to answer every question 24/7.
+      <section className="bg-gray-900 text-white py-16">
+      <div className="container mx-auto px-4 md:flex items-center">
+        {/* Left Side: Image or Illustration */}
+        <div className="md:w-1/2 text-center md:text-left">
+          <div className="bg-purple-900 p-8 rounded-lg">
+            <h2 className="text-2xl font-bold mb-4">WE PREFER QUALITY</h2>
+            <p className="text-gray-400">
+              We care about our users, so we give the best and are ready to
+              answer every question 24/7.
+            </p>
+          </div>
+        </div>
+
+        {/* Right Side: Features List */}
+        <div className="md:w-1/2 mt-8 md:mt-0 md:pl-8 space-y-4">
+          <div className="bg-gradient-to-r from-pink-600 to-purple-700 p-6 rounded-lg flex items-center">
+            <span className="text-2xl">🏆</span>
+            <div className="ml-4">
+              <h3 className="text-xl font-bold">HIGH QUALITY PROMOTION</h3>
+              <p className="text-gray-200">
+                We use only proven account promotion tactics without losing the
+                trust of the audience.
               </p>
             </div>
           </div>
 
-          {/* Right Side: Features List */}
-          <div className="md:w-1/2 mt-8 md:mt-0 md:pl-8 space-y-4">
-            <div className="bg-gradient-to-r from-purple-600 to-blue-700 p-6 rounded-lg flex items-center">
-              <span className="text-2xl">🏆</span>
-              <div className="ml-4">
-                <h3 className="text-xl font-bold">HIGH QUALITY PROMOTION</h3>
-                <p className="text-gray-200">
-                  We use only proven account promotion tactics without losing the trust of the audience.
-                </p>
-              </div>
+          <div className="bg-gradient-to-r from-pink-600 to-purple-700 p-6 rounded-lg flex items-center">
+            <span className="text-2xl">🚀</span>
+            <div className="ml-4">
+              <h3 className="text-xl font-bold">FAST START</h3>
+              <p className="text-gray-200">
+                If you dream of becoming popular and communicating with an
+                audience of thousands, your dream will come true very soon.
+              </p>
             </div>
+          </div>
 
-            <div className="bg-gradient-to-r from-purple-600 to-blue-700 p-6 rounded-lg flex items-center">
-              <span className="text-2xl">🚀</span>
-              <div className="ml-4">
-                <h3 className="text-xl font-bold">FAST START</h3>
-                <p className="text-gray-200">
-                  If you dream of becoming popular and communicating with an audience of thousands, your dream will come true very soon.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-purple-600 to-blue-700 p-6 rounded-lg flex items-center">
-              <span className="text-2xl">🎧</span>
-              <div className="ml-4">
-                <h3 className="text-xl font-bold">24/7 SUPPORT</h3>
-                <p className="text-gray-200">
-                  We are always ready to answer all your questions at any time of the day.
-                </p>
-              </div>
+          <div className="bg-gradient-to-r from-pink-600 to-purple-700 p-6 rounded-lg flex items-center">
+            <span className="text-2xl">🎧</span>
+            <div className="ml-4">
+              <h3 className="text-xl font-bold">24/7 SUPPORT</h3>
+              <p className="text-gray-200">
+                We solve issues in the shortest time to ensure customers are
+                satisfied with our services.
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
     </div>
   );
 };
