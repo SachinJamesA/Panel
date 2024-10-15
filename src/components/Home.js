@@ -117,22 +117,56 @@ const Home = () => {
     </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 lg:py-24 bg-blue-900 text-white text-center">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Take Your Brand to the Next Level?
-          </h2>
-          <p className="text-lg md:text-xl font-light mb-8">
-            Contact us today for a free consultation and let’s create a strategy that works for you!
-          </p>
-          <a
-            href="/contact"
-            className="inline-block bg-white text-blue-900 font-semibold py-3 px-6 rounded hover:bg-gray-200 transition duration-200"
-          >
-            Get Started
-          </a>
+      <section className="bg-gray-900 text-white py-16">
+      <div className="container mx-auto px-4 md:flex items-center">
+        {/* Left Side: Image or Illustration */}
+        <div className="md:w-1/2 text-center md:text-left">
+          <div className="bg-purple-900 p-8 rounded-lg">
+            <h2 className="text-2xl font-bold mb-4">WE PREFER QUALITY</h2>
+            <p className="text-gray-400">
+              We care about our users, so we give the best and are ready to
+              answer every question 24/7.
+            </p>
+          </div>
         </div>
-      </section>
+
+        {/* Right Side: Features List */}
+        <div className="md:w-1/2 mt-8 md:mt-0 md:pl-8 space-y-4">
+          <div className="bg-gradient-to-r from-pink-600 to-purple-700 p-6 rounded-lg flex items-center">
+            <span className="text-2xl">🏆</span>
+            <div className="ml-4">
+              <h3 className="text-xl font-bold">HIGH QUALITY PROMOTION</h3>
+              <p className="text-gray-200">
+                We use only proven account promotion tactics without losing the
+                trust of the audience.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-pink-600 to-purple-700 p-6 rounded-lg flex items-center">
+            <span className="text-2xl">🚀</span>
+            <div className="ml-4">
+              <h3 className="text-xl font-bold">FAST START</h3>
+              <p className="text-gray-200">
+                If you dream of becoming popular and communicating with an
+                audience of thousands, your dream will come true very soon.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-pink-600 to-purple-700 p-6 rounded-lg flex items-center">
+            <span className="text-2xl">🎧</span>
+            <div className="ml-4">
+              <h3 className="text-xl font-bold">24/7 SUPPORT</h3>
+              <p className="text-gray-200">
+                We solve issues in the shortest time to ensure customers are
+                satisfied with our services.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     </div>
   );
 };
