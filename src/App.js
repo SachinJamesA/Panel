@@ -11,7 +11,10 @@ import About from './components/About';
 import ProfilePage from './profile/ProfilePage';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Service from './components/Service';
+<<<<<<< HEAD
 import Api from './components/Api';
+=======
+>>>>>>> 0eb925cc6ece0a321c2bb08ae6ae6050bc063638
 
 function App() {
   const [activeLink, setActiveLink] = useState("");
